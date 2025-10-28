@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://df7abed1vlxeu"]
+
+[ext_resource type="Texture2D" uid="uid://carso4wmte6ln" path="res://Pixel Chest Pack/Wooden Chest 1/Wooden Chest 1 Sprites/Wooden Chest 1 - frame  00.png" id="1_j18p2"]
+[ext_resource type="Texture2D" uid="uid://o2ds2o6mhl2s" path="res://disk.png" id="2_pdrx6"]
+[ext_resource type="Texture2D" uid="uid://bc5kppd81gjm7" path="res://key.png" id="3_xioaj"]
+[ext_resource type="Texture2D" uid="uid://8av8hoav0u45" path="res://notebook.png" id="4_cw16u"]
+[ext_resource type="Texture2D" uid="uid://c4hywc6afa63w" path="res://letter-from-mother.png" id="5_duujy"]
+[ext_resource type="Texture2D" uid="uid://5mpqcbhrj42t" path="res://dads folder of letters from mom.png" id="6_k4rs8"]
+
+[node name="End" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j18p2")
+
+[node name="Disk" type="Sprite2D" parent="."]
+position = Vector2(-53, 22)
+texture = ExtResource("2_pdrx6")
+
+[node name="Key" type="Sprite2D" parent="."]
+position = Vector2(53, 23)
+texture = ExtResource("3_xioaj")
+
+[node name="Notebook" type="Sprite2D" parent="."]
+position = Vector2(-28, 50)
+texture = ExtResource("4_cw16u")
+
+[node name="Letter-from-mother" type="Sprite2D" parent="."]
+position = Vector2(18, 48)
+texture = ExtResource("5_duujy")
+
+[node name="DadsFolderOfLettersFromMom" type="Sprite2D" parent="."]
+position = Vector2(53, -19)
+texture = ExtResource("6_k4rs8")
