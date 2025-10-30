@@ -15,9 +15,8 @@ size = Vector2(11722, 256)
 script = ExtResource("1_3j3o2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(286, 348)
-offset = Vector2(0, -61.355)
-zoom = Vector2(2, 2)
+position = Vector2(282, 419)
+zoom = Vector2(2.775, 2.775)
 position_smoothing_enabled = true
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ty6mf")]
@@ -40,8 +39,8 @@ scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("2_a0uor")
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_o1wur")]
-scale = Vector2(2.965, 2.965)
-transform = Transform2D(2.965, 0, 0, 2.965, 0, 0)
+scale = Vector2(1.435, 1.435)
+transform = Transform2D(1.435, 0, 0, 1.435, 0, 0)
 
 [node name="TileMapLayer" parent="." instance=ExtResource("3_65cjb")]
 position = Vector2(451, 490)
