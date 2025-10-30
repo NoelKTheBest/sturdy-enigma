@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4hywc6afa63w"
-path="res://.godot/imported/letter-from-mother.png-2829730385d7df5d277bc54f55438be2.ctex"
+uid="uid://ctsh47uxi5pyu"
+path="res://.godot/imported/Props.png-5d34b28b5f466455bd66eb123219d345.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://letter-from-mother.png"
-dest_files=["res://.godot/imported/letter-from-mother.png-2829730385d7df5d277bc54f55438be2.ctex"]
+source_file="res://Autumn Forest 2D Pixel Art/Props/Props.png"
+dest_files=["res://.godot/imported/Props.png-5d34b28b5f466455bd66eb123219d345.ctex"]
 
 [params]
 

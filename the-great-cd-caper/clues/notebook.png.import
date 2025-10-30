@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc5kppd81gjm7"
-path="res://.godot/imported/key.png-e8e8692bdca67e3f30183e8f067d8541.ctex"
+uid="uid://8av8hoav0u45"
+path="res://.godot/imported/notebook.png-85ff313dfae87948eb487e2cc3507248.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://key.png"
-dest_files=["res://.godot/imported/key.png-e8e8692bdca67e3f30183e8f067d8541.ctex"]
+source_file="res://clues/notebook.png"
+dest_files=["res://.godot/imported/notebook.png-85ff313dfae87948eb487e2cc3507248.ctex"]
 
 [params]
 

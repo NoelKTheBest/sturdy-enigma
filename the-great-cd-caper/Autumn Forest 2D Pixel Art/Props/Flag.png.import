@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o2ds2o6mhl2s"
-path="res://.godot/imported/disk.png-1e409d7d006cfdb16b2b9f5a6d98d9e1.ctex"
+uid="uid://dfqx3l35r4fhx"
+path="res://.godot/imported/Flag.png-8d75c832ff41afb241c01c9a9647cd31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://disk.png"
-dest_files=["res://.godot/imported/disk.png-1e409d7d006cfdb16b2b9f5a6d98d9e1.ctex"]
+source_file="res://Autumn Forest 2D Pixel Art/Props/Flag.png"
+dest_files=["res://.godot/imported/Flag.png-8d75c832ff41afb241c01c9a9647cd31.ctex"]
 
 [params]
 

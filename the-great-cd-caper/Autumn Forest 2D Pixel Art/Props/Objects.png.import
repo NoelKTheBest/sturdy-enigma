@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8av8hoav0u45"
-path="res://.godot/imported/notebook.png-ebda6ac4ca3f9ce95f7ff61061b0bac2.ctex"
+uid="uid://b5pfyfbmof8uj"
+path="res://.godot/imported/Objects.png-73b3feb272ac4f1f3e3fb2748b20fc26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://notebook.png"
-dest_files=["res://.godot/imported/notebook.png-ebda6ac4ca3f9ce95f7ff61061b0bac2.ctex"]
+source_file="res://Autumn Forest 2D Pixel Art/Props/Objects.png"
+dest_files=["res://.godot/imported/Objects.png-73b3feb272ac4f1f3e3fb2748b20fc26.ctex"]
 
 [params]
 
