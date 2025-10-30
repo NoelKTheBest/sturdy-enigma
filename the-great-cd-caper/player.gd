@@ -29,3 +29,8 @@ func _physics_process(delta: float) -> void:
 	elif direction == 1: $Sprite2D.flip_h = false
 	
 	if velocity.y == JUMP_VELOCITY: $AnimationPlayer.play("jump")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	position = Vector2(147, 410)
+	velocity.y = 0

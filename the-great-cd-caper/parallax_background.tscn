@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bub6tnkkml320"]
+
+[ext_resource type="Texture2D" uid="uid://0jtu705sflus" path="res://Autumn Forest 2D Pixel Art/Background/3.png" id="1_inqlr"]
+[ext_resource type="Texture2D" uid="uid://dikmc2g8gx06d" path="res://Autumn Forest 2D Pixel Art/Background/2.png" id="2_3nttj"]
+[ext_resource type="Texture2D" uid="uid://def21esv1vgxu" path="res://Autumn Forest 2D Pixel Art/Background/1.png" id="3_akpik"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+scale = Vector2(3.575, 3.575)
+transform = Transform2D(3.575, 0, 0, 3.575, 0, 0)
+follow_viewport_scale = 0.35
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.25, 0)
+motion_mirroring = Vector2(320, 0)
+
+[node name="3" type="Sprite2D" parent="ParallaxLayer3"]
+texture = ExtResource("1_inqlr")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(320, 0)
+
+[node name="2" type="Sprite2D" parent="ParallaxLayer2"]
+texture = ExtResource("2_3nttj")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.75, 0)
+motion_mirroring = Vector2(320, 0)
+
+[node name="1" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("3_akpik")
+centered = false
