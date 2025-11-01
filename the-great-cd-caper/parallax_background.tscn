@@ -10,7 +10,7 @@ transform = Transform2D(3.575, 0, 0, 3.575, 0, 0)
 follow_viewport_scale = 0.35
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.25, 0)
+motion_scale = Vector2(0.05, 0)
 motion_mirroring = Vector2(320, 0)
 
 [node name="3" type="Sprite2D" parent="ParallaxLayer3"]
@@ -18,7 +18,7 @@ texture = ExtResource("1_inqlr")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.5, 0)
+motion_scale = Vector2(0.15, 0)
 motion_mirroring = Vector2(320, 0)
 
 [node name="2" type="Sprite2D" parent="ParallaxLayer2"]
@@ -26,7 +26,7 @@ texture = ExtResource("2_3nttj")
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_scale = Vector2(0.75, 0)
+motion_scale = Vector2(0.25, 0)
 motion_mirroring = Vector2(320, 0)
 
 [node name="1" type="Sprite2D" parent="ParallaxLayer"]

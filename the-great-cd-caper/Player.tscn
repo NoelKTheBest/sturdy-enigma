@@ -217,7 +217,7 @@ _data = {
 "run": SubResource("Animation_3avtp")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_yh4py")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

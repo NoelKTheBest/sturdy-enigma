@@ -9,3 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Camera2D.position.x = $CharacterBody2D.position.x
+
+
+func _on_item_player_can_interact() -> void:
+	#print_rich("[color=blue]Press E to interact")
+	print("Press E to interact")
