@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5b0qpinvbirw"]
+
+[ext_resource type="Texture2D" uid="uid://dvskab1jtlx6h" path="res://PIXEL1992_65x_Houses&Backgorunds_ED2/House (52).png" id="1_akg4o"]
+[ext_resource type="Script" path="res://scripts/house.gd" id="2_g078x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_57dc5"]
+radius = 23.6567
+
+[node name="House" type="Sprite2D"]
+z_index = -5
+scale = Vector2(2.36719, 2.36719)
+texture = ExtResource("1_akg4o")
+script = ExtResource("2_g078x")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(0, 10.1386)
+shape = SubResource("CircleShape2D_57dc5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.256502, 0.256502)
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.5
+offset_top = -19.7347
+offset_right = 60.5
+offset_bottom = 3.26532
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press E to Enter"
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

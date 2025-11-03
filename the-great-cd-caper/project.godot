@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="the-great-cd-caper"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://scenes/Scene Sequence/00_Main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Ground"
 
 [rendering]
 

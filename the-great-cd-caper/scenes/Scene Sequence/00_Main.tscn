@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsfiw8g74wfgx"]
+[gd_scene load_steps=11 format=3 uid="uid://bsfiw8g74wfgx"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_3j3o2"]
-[ext_resource type="PackedScene" uid="uid://bhdy6dpfgsy63" path="res://Player.tscn" id="1_ty6mf"]
-[ext_resource type="Texture2D" uid="uid://by8wf6nianb8m" path="res://icon.svg" id="2_a0uor"]
-[ext_resource type="PackedScene" uid="uid://cvu3ianyy3ofn" path="res://tileset_1_test.tscn" id="3_65cjb"]
-[ext_resource type="PackedScene" uid="uid://bub6tnkkml320" path="res://parallax_background.tscn" id="4_o1wur"]
-[ext_resource type="PackedScene" uid="uid://dljeyxphnertq" path="res://item.tscn" id="6_x3uk4"]
-[ext_resource type="Texture2D" uid="uid://8av8hoav0u45" path="res://clues/notebook.png" id="7_a7wxl"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_7x0j8"]
+[ext_resource type="PackedScene" uid="uid://bhdy6dpfgsy63" path="res://scenes/Player.tscn" id="2_q3g5s"]
+[ext_resource type="Texture2D" uid="uid://by8wf6nianb8m" path="res://icon.svg" id="3_1ubuk"]
+[ext_resource type="PackedScene" uid="uid://bub6tnkkml320" path="res://scenes/parallax_background.tscn" id="4_rk2di"]
+[ext_resource type="PackedScene" uid="uid://b5b0qpinvbirw" path="res://scenes/House.tscn" id="5_ovrrq"]
+[ext_resource type="PackedScene" uid="uid://cvu3ianyy3ofn" path="res://scenes/tileset_1_test.tscn" id="6_hxm8s"]
+[ext_resource type="PackedScene" uid="uid://dljeyxphnertq" path="res://scenes/item.tscn" id="7_p7b10"]
+[ext_resource type="Texture2D" uid="uid://8av8hoav0u45" path="res://clues/notebook.png" id="8_mdvdo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07wf6"]
 
@@ -14,14 +15,14 @@
 size = Vector2(11722, 256)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_3j3o2")
+script = ExtResource("1_7x0j8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(282, 419)
 zoom = Vector2(2.775, 2.775)
 position_smoothing_enabled = true
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_ty6mf")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_q3g5s")]
 position = Vector2(153, 410)
 metadata/_edit_group_ = true
 
@@ -38,16 +39,19 @@ shape = SubResource("RectangleShape2D_07wf6")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 scale = Vector2(0.15625, 0.15625)
-texture = ExtResource("2_a0uor")
+texture = ExtResource("3_1ubuk")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("4_o1wur")]
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_rk2di")]
 scale = Vector2(1.435, 1.435)
 transform = Transform2D(1.435, 0, 0, 1.435, 0, 0)
 
-[node name="TileMapLayer" parent="." instance=ExtResource("3_65cjb")]
+[node name="House" parent="." instance=ExtResource("5_ovrrq")]
+position = Vector2(472, 432)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("6_hxm8s")]
 position = Vector2(451, 490)
 
-[node name="TileMapLayer2" parent="." instance=ExtResource("3_65cjb")]
+[node name="TileMapLayer2" parent="." instance=ExtResource("6_hxm8s")]
 position = Vector2(3336, 488)
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -57,13 +61,13 @@ position = Vector2(-36, 23)
 position = Vector2(3224, 816)
 shape = SubResource("RectangleShape2D_6q7qy")
 
-[node name="Item" parent="." instance=ExtResource("6_x3uk4")]
+[node name="Item" parent="." instance=ExtResource("7_p7b10")]
 position = Vector2(177, 483)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Item" index="0"]
 z_index = -1
-texture = ExtResource("7_a7wxl")
+texture = ExtResource("8_mdvdo")
 
 [connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="player_can_interact" from="Item" to="." method="_on_item_player_can_interact"]

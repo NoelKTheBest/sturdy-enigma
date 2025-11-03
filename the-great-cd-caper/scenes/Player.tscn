@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bhdy6dpfgsy63"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_yh4py"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_yh4py"]
 [ext_resource type="Texture2D" uid="uid://b8qxetmnpxfp4" path="res://AssetPack-V1/AssetPack-V1/Sprite Sheets/Character Idle 48x48.png" id="2_lnmtx"]
 [ext_resource type="Texture2D" uid="uid://bofdl7hdckmv1" path="res://AssetPack-V1/AssetPack-V1/Sprite Sheets/run cycle 48x48.png" id="3_35bqq"]
 [ext_resource type="Texture2D" uid="uid://b5c112np3gn0m" path="res://AssetPack-V1/AssetPack-V1/Sprite Sheets/player land 48x48.png" id="4_sxy78"]
@@ -218,6 +218,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 3
 script = ExtResource("1_yh4py")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
