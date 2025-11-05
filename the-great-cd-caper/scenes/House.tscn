@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_57dc5"]
 radius = 23.6567
 
-[node name="House" type="Sprite2D"]
+[node name="House" type="Sprite2D" groups=["House"]]
 z_index = -5
 scale = Vector2(2.36719, 2.36719)
 texture = ExtResource("1_akg4o")
