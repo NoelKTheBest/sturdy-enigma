@@ -14,7 +14,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:	
-	$Camera2D.position.x = $CharacterBody2D.position.x
+	#$Camera2D.position.x = $CharacterBody2D.position.x
+	$Camera2D.position = $CharacterBody2D.position
 	
 	if player_can_enter:
 		if Input.is_action_just_pressed("enter_house"):
