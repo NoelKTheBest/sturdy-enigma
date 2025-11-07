@@ -1,5 +1,9 @@
 extends Node2D
 
+signal _04_player_finds_friend()
+signal _05_friend_helps_player()
+
+
 var player_can_enter
 var current_house
 var houses
