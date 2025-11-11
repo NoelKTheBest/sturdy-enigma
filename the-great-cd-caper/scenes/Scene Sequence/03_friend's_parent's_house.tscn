@@ -18,6 +18,11 @@ tile_set = ExtResource("1_qacsd")
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_o7tbe")]
 position = Vector2(0, 49)
 
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, -49)
+zoom = Vector2(3.05, 3.05)
+position_smoothing_enabled = true
+
 [node name="Papa" type="Sprite2D" parent="."]
 modulate = Color(0, 0.483333, 1, 1)
 position = Vector2(-215, 48)
