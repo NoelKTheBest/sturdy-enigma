@@ -3,17 +3,24 @@ extends Node
 var scene_00 : PackedScene = preload("res://scenes/Scene Sequence/00_Main.tscn")
 var scene_01 : PackedScene = preload("res://scenes/Scene Sequence/01_log_cabin_interior.tscn")
 var scene_02 : PackedScene = preload("res://scenes/Scene Sequence/02_friend's_house.tscn")
+var scene_03 : PackedScene = preload("res://scenes/Scene Sequence/03_friend's_parent's_house.tscn")
+var scene_04 : PackedScene = preload("res://scenes/Scene Sequence/04_woods.tscn")
 
 var scene_00_instance
 var scene_01_instance
 var scene_02_instance
+var scene_03_instance
+var scene_04_instance
 
 # Developing the full project, we want to have another scene that start and then create instances of the scene sequence
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Scene 0 (Main) is instantiated upon game startup during development
 	#scene_00_instance = scene_00.instantiate()
 	scene_01_instance = scene_01.instantiate()
 	scene_02_instance = scene_02.instantiate()
+	scene_03_instance = scene_03.instantiate()
+	scene_04_instance = scene_04.instantiate()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

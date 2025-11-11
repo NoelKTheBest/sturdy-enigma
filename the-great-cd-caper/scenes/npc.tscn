@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c470g7aejvixc"]
+
+[ext_resource type="Texture2D" uid="uid://dk2gioaxderco" path="res://AssetPack-V1/AssetPack-V1/PlayerWalk/PlayerWalk 48x48.png" id="1_j7dlw"]
+[ext_resource type="Script" path="res://scripts/npc.gd" id="2_xq24a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5583d"]
+radius = 40.0
+
+[node name="NPC" type="Sprite2D"]
+texture = ExtResource("1_j7dlw")
+hframes = 8
+frame = 2
+script = ExtResource("2_xq24a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5583d")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

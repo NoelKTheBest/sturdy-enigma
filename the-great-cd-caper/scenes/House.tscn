@@ -7,7 +7,7 @@
 radius = 23.6567
 
 [node name="House" type="Sprite2D" groups=["House"]]
-z_index = -5
+z_index = -2
 scale = Vector2(2.36719, 2.36719)
 texture = ExtResource("1_akg4o")
 script = ExtResource("2_g078x")

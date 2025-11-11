@@ -26,6 +26,10 @@ func _process(delta: float) -> void:
 			match current_house:
 				"Log Cabin": SceneLoader.change_scenes(0, 1)
 				"Friend's House": SceneLoader.change_scenes(0, 2)
+				"Parent's of Friend": SceneLoader.change_scenes(0, 3)
+	
+	if false:
+		SceneLoader.change_scenes(0, 4)
 
 
 func _on_item_player_can_interact() -> void:

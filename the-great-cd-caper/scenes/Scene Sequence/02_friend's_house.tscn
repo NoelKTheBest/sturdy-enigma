@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/02_friend's_house.gd" id="1_uxykt"]
 [ext_resource type="TileSet" uid="uid://2x8olwwuc25m" path="res://assets/log_cabin_interior.tres" id="1_y4ui4"]
 [ext_resource type="PackedScene" uid="uid://bhdy6dpfgsy63" path="res://scenes/Player.tscn" id="2_ki3hp"]
-[ext_resource type="Texture2D" uid="uid://dk2gioaxderco" path="res://AssetPack-V1/AssetPack-V1/PlayerWalk/PlayerWalk 48x48.png" id="3_kb5qa"]
+[ext_resource type="PackedScene" uid="uid://c470g7aejvixc" path="res://scenes/npc.tscn" id="4_oleht"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_uxykt")
@@ -31,13 +31,8 @@ offset_bottom = 71.0
 scale = Vector2(0.65, 0.65)
 text = "Friend"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.74, 0.352117, 0.111, 1)
+[node name="Friend" parent="." instance=ExtResource("4_oleht")]
 position = Vector2(96, 80)
-texture = ExtResource("3_kb5qa")
-flip_h = true
-hframes = 8
-frame = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

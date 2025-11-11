@@ -20,7 +20,16 @@ func _process(delta: float) -> void:
 func progress_story(event_number: int):
 	# set event_inc by event_number
 	# call run_event(int)
-	pass
+	
+	match event_number:
+		1: return "Oh hey Anna, I didn't know you were back in town. How are you?"
+		2: return "You lost that cd?"
+		3: return "Mmmmm...I was kinda busy with something at the moment...but I can help you find it."
+		4: return Vector2(0, 0) # return position that npc will be at in main scene
+		5: return Vector2(0, 0) # return position that npc will be at in log cabin
+		#6: ....
+		# ...
+		# ...
 
 
 func run_event(event_number: int):
