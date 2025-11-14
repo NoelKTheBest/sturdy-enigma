@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
+var falling_through = false
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset_player_position"):
@@ -24,8 +25,10 @@ func _physics_process(delta: float) -> void:
 	# Drop Through Platform
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and Input.is_action_pressed("ui_down"):
 		set_collision_mask_value(3, false)
+		falling_through = true
+		$DropthroughCancelTimer.start()
 	
-	if velocity.y > 0 and !Input.is_action_pressed("ui_down"):
+	if velocity.y > 0 and !Input.is_action_pressed("ui_down") and !falling_through:
 		set_collision_mask_value(3, true)
 	
 	# Get the input direction and handle the movement/deceleration.
@@ -54,3 +57,7 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	position = Vector2(147, 410)
 	velocity.y = 0
+
+
+func _on_dropthrough_cancel_timer_timeout() -> void:
+	falling_through = false

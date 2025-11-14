@@ -383,6 +383,7 @@ script = ExtResource("1_yh4py")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_s2pix")
+one_way_collision = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
@@ -409,3 +410,10 @@ autostart = true
 [node name="ASearch" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_wloav")
 parameters/looping = true
+
+[node name="DropthroughCancelTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.25
+one_shot = true
+
+[connection signal="timeout" from="DropthroughCancelTimer" to="." method="_on_dropthrough_cancel_timer_timeout"]
