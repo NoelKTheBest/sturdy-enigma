@@ -22,7 +22,7 @@ script = ExtResource("1_7x0j8")
 metadata/_edit_horizontal_guides_ = [806.0]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1322, -823)
+position = Vector2(177, 411)
 zoom = Vector2(2.775, 2.775)
 limit_left = -95
 limit_top = -2835
@@ -99,7 +99,7 @@ house_name = "Parent's of Friend"
 [node name="Tileset" parent="." instance=ExtResource("6_8w2t8")]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_q3g5s")]
-position = Vector2(1314, -768)
+position = Vector2(312, 471)
 metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
