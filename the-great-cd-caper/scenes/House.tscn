@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5b0qpinvbirw"]
+[gd_scene load_steps=3 format=3 uid="uid://b5b0qpinvbirw"]
 
 [ext_resource type="Texture2D" uid="uid://dvskab1jtlx6h" path="res://PIXEL1992_65x_Houses&Backgorunds_ED2/House (52).png" id="1_akg4o"]
-[ext_resource type="Script" path="res://scripts/house.gd" id="2_g078x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57dc5"]
 radius = 23.6567
@@ -10,7 +9,6 @@ radius = 23.6567
 z_index = -2
 scale = Vector2(2.36719, 2.36719)
 texture = ExtResource("1_akg4o")
-script = ExtResource("2_g078x")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 0

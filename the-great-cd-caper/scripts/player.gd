@@ -36,10 +36,6 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
-		if $FootstepTimer.time_left == 0 and is_on_floor() and velocity.y == 0: 
-			$footstep.pitch_scale = randf_range(0.8, 1.2)
-			$footstep.play()
-			$FootstepTimer.start()
 		if is_on_floor(): $AnimationPlayer.play("run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

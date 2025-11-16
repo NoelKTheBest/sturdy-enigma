@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhdy6dpfgsy63"]
+[gd_scene load_steps=17 format=3 uid="uid://bhdy6dpfgsy63"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_yh4py"]
 [ext_resource type="Texture2D" uid="uid://c37khaf33b8qa" path="res://assets/player_jump_48x48.png" id="3_tuphr"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://qlas7pfdvl1g" path="res://assets/Character_Idle_48x48-Sheet_ver_2.png" id="4_vqe4p"]
 [ext_resource type="Texture2D" uid="uid://667dy084b46i" path="res://assets/run_cycle_48x48.png" id="5_oo0om"]
 [ext_resource type="Texture2D" uid="uid://dvjd2blcg0mho" path="res://assets/PlayerWalk_48x48.png" id="6_vqd0r"]
-[ext_resource type="AudioStream" uid="uid://c2qeily6ykgtw" path="res://assets/ver-5-footstep.mp3" id="8_q1g0e"]
 [ext_resource type="AudioStream" uid="uid://nyuxive4xycj" path="res://assets/A Search.ogg" id="8_wloav"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2pix"]
@@ -395,17 +394,6 @@ hframes = 4
 libraries = {
 "": SubResource("AnimationLibrary_jsxvd")
 }
-
-[node name="footstep" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_q1g0e")
-volume_db = 3.429
-attenuation = 17.1484
-playback_type = 1
-
-[node name="FootstepTimer" type="Timer" parent="."]
-wait_time = 0.45
-one_shot = true
-autostart = true
 
 [node name="ASearch" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_wloav")
