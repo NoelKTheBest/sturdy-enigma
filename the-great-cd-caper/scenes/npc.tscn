@@ -1,21 +1,101 @@
-[gd_scene load_steps=4 format=3 uid="uid://c470g7aejvixc"]
+[gd_scene load_steps=10 format=3 uid="uid://c470g7aejvixc"]
 
-[ext_resource type="Texture2D" uid="uid://dk2gioaxderco" path="res://AssetPack-V1/AssetPack-V1/PlayerWalk/PlayerWalk 48x48.png" id="1_j7dlw"]
+[ext_resource type="Texture2D" uid="uid://dnukcmjx3nt0s" path="res://assets/cat.png" id="1_04a4r"]
 [ext_resource type="Script" path="res://scripts/npc.gd" id="2_xq24a"]
+[ext_resource type="Animation" uid="uid://cf25gt4o7p202" path="res://assets/veggie_idle.res" id="3_dtojv"]
+[ext_resource type="Theme" uid="uid://c3j8arf5wh1y8" path="res://assets/new_theme.tres" id="3_w0m0p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5583d"]
 radius = 40.0
 
+[sub_resource type="Animation" id="Animation_bdm5a"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_msinv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3cg2"]
+_data = {
+"RESET": SubResource("Animation_msinv"),
+"idle": SubResource("Animation_bdm5a"),
+"veggie_idle": ExtResource("3_dtojv")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4puf1"]
+content_margin_left = 7.0
+content_margin_right = 7.0
+bg_color = Color(0.26, 0.26, 0.26, 0.898039)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.208, 0.8, 0.405333, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 20
+anti_aliasing = false
+
 [node name="NPC" type="Sprite2D"]
-texture = ExtResource("1_j7dlw")
-hframes = 8
-frame = 2
+texture = ExtResource("1_04a4r")
+hframes = 4
 script = ExtResource("2_xq24a")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_5583d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_l3cg2")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = -120.0
+offset_top = -56.0
+offset_right = 265.0
+offset_bottom = -16.0
+scale = Vector2(0.64, 0.64)
+theme = ExtResource("3_w0m0p")
+text = "Everything you need you will find, if you climb :>"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -48.0
+offset_top = -32.0
+offset_right = 108.0
+offset_bottom = -3.0
+scale = Vector2(0.65, 0.65)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4puf1")
+text = "Say Hii to me :> (E)"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

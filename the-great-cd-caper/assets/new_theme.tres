@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c3j8arf5wh1y8"]
+
+[ext_resource type="StyleBox" uid="uid://bqp88x8i0n5p7" path="res://assets/new_style_box_flat.tres" id="1_pvgbp"]
+
+[resource]
+Label/styles/normal = ExtResource("1_pvgbp")

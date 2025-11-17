@@ -1,10 +1,30 @@
 extends CharacterBody2D
 
+@export var accel : int
+@export var fall_velocity_factor : float = 3
 
-const SPEED = 200.0
+signal talk_to_npc
+signal play_cd
+
+const MAX_SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
 var falling_through = false
+var music_toggle = 0
+var song1 = preload("res://assets/A Search.ogg")
+var song2 = preload("res://assets/2025-11-11.mp3")
+
+@onready var jump_buffer_timer: Timer = $Timer
+
+func _ready() -> void:
+	$Music.play()
+
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact"):
+		talk_to_npc.emit()
+		play_cd.emit()
+
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("reset_player_position"):
@@ -35,10 +55,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, direction * MAX_SPEED, accel)
 		if is_on_floor(): $AnimationPlayer.play("run")
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, accel)
 		if is_on_floor(): $AnimationPlayer.play("idle")
 
 	move_and_slide()
@@ -57,3 +77,14 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_dropthrough_cancel_timer_timeout() -> void:
 	falling_through = false
+
+
+func _on_music_finished() -> void:
+	if music_toggle == 0:
+		$Music.stream = song2
+		music_toggle = 1 - music_toggle
+	elif music_toggle == 1:
+		$Music.stream = song1
+		music_toggle = 1 - music_toggle
+	
+	$Music.play()

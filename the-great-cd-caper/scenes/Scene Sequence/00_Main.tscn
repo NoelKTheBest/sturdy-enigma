@@ -1,21 +1,88 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsfiw8g74wfgx"]
+[gd_scene load_steps=22 format=3 uid="uid://bsfiw8g74wfgx"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_7x0j8"]
 [ext_resource type="PackedScene" uid="uid://bhdy6dpfgsy63" path="res://scenes/Player.tscn" id="2_q3g5s"]
 [ext_resource type="Texture2D" uid="uid://by8wf6nianb8m" path="res://icon.svg" id="3_1ubuk"]
 [ext_resource type="PackedScene" uid="uid://bub6tnkkml320" path="res://scenes/parallax_background.tscn" id="4_rk2di"]
+[ext_resource type="Texture2D" uid="uid://bmdgbycdwybh8" path="res://assets/house_2.png" id="5_bbd64"]
 [ext_resource type="PackedScene" uid="uid://b5b0qpinvbirw" path="res://scenes/House.tscn" id="5_ovrrq"]
 [ext_resource type="PackedScene" uid="uid://dlp62p5uv0tmk" path="res://scenes/tileset.tscn" id="6_8w2t8"]
-[ext_resource type="Texture2D" uid="uid://1ymcnnghoc7d" path="res://PIXEL1992_65x_Houses&Backgorunds_ED2/House (58).png" id="6_5641d"]
 [ext_resource type="PackedScene" uid="uid://dljeyxphnertq" path="res://scenes/item.tscn" id="7_p7b10"]
-[ext_resource type="Texture2D" uid="uid://8av8hoav0u45" path="res://clues/notebook.png" id="8_mdvdo"]
+[ext_resource type="Texture2D" uid="uid://co6rka65j5fgn" path="res://assets/icons.png" id="8_ydgf8"]
+[ext_resource type="Texture2D" uid="uid://bylgum1qpt3uv" path="res://assets/House Template.png" id="10_t5dv7"]
+[ext_resource type="Texture2D" uid="uid://dlso71u80h63c" path="res://assets/snake.png" id="11_4x77o"]
+[ext_resource type="PackedScene" uid="uid://c470g7aejvixc" path="res://scenes/npc.tscn" id="11_b7oja"]
 [ext_resource type="PackedScene" uid="uid://c7ykr1f3myn7m" path="res://scenes/clouds.tscn" id="11_ld0tb"]
-[ext_resource type="Texture2D" uid="uid://qj1dic2e58ai" path="res://PIXEL1992_65x_Houses&Backgorunds_ED2/House (63).png" id="11_ls72k"]
+[ext_resource type="Texture2D" uid="uid://cj6fbox5mw1uo" path="res://assets/friend.png" id="13_awie7"]
+[ext_resource type="Texture2D" uid="uid://dbvk8qhnpdykv" path="res://assets/veggie.png" id="13_o5e33"]
+[ext_resource type="AudioStream" uid="uid://feeypahr6q1k" path="res://assets/CD song.mp3" id="15_s0kv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07wf6"]
+size = Vector2(20, 103.936)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q7qy"]
 size = Vector2(11722, 256)
+
+[sub_resource type="Animation" id="Animation_oh3ik"]
+resource_name = "fade to white"
+length = 55.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 50),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect/Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 27.6667, 55),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lugij"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect/Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wsh1l"]
+_data = {
+"RESET": SubResource("Animation_lugij"),
+"fade to white": SubResource("Animation_oh3ik")
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_7x0j8")
@@ -32,7 +99,7 @@ position_smoothing_enabled = true
 editor_draw_limits = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-169, 336)
+position = Vector2(-169, -1069)
 scale = Vector2(7.5185, 33.5974)
 collision_layer = 2
 collision_mask = 0
@@ -54,6 +121,7 @@ collision_mask = 0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, -41.9679)
 shape = SubResource("RectangleShape2D_07wf6")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
@@ -82,25 +150,16 @@ scale = Vector2(1.435, 1.435)
 transform = Transform2D(1.435, 0, 0, 1.435, 0, 0)
 
 [node name="House" parent="." instance=ExtResource("5_ovrrq")]
-position = Vector2(472, 432)
-house_name = "Log Cabin"
+position = Vector2(472, 429)
 
 [node name="House2" parent="." instance=ExtResource("5_ovrrq")]
-position = Vector2(1300, 263)
-texture = ExtResource("6_5641d")
-house_name = "Friend's House"
+position = Vector2(1300, 281)
+texture = ExtResource("5_bbd64")
 
 [node name="House3" parent="." instance=ExtResource("5_ovrrq")]
 position = Vector2(1341, 46)
-scale = Vector2(2.04297, 2.04297)
-texture = ExtResource("11_ls72k")
-house_name = "Parent's of Friend"
 
 [node name="Tileset" parent="." instance=ExtResource("6_8w2t8")]
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_q3g5s")]
-position = Vector2(312, 471)
-metadata/_edit_group_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-36, 23)
@@ -109,19 +168,192 @@ position = Vector2(-36, 23)
 position = Vector2(3224, 816)
 shape = SubResource("RectangleShape2D_6q7qy")
 
-[node name="Item" parent="." instance=ExtResource("7_p7b10")]
-position = Vector2(177, 483)
+[node name="CD" parent="." instance=ExtResource("7_p7b10")]
+position = Vector2(1146, -2620)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" parent="Item" index="0"]
+[node name="Sprite2D" parent="CD" index="0"]
 z_index = -1
-texture = ExtResource("8_mdvdo")
+texture = ExtResource("8_ydgf8")
+region_enabled = true
+region_rect = Rect2(16.9792, 32.4827, 14.2386, 14.7222)
+
+[node name="CollisionShape2D" parent="CD/Sprite2D/Area2D" index="0"]
+visible = false
+
+[node name="Label" type="Label" parent="CD"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -36.0
+offset_right = 31.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Play Me (E)"
 
 [node name="Clouds" parent="." instance=ExtResource("11_ld0tb")]
 visible = false
 position = Vector2(1308, -778)
 
-[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
-[connection signal="player_can_interact" from="Item" to="." method="_on_item_player_can_interact"]
+[node name="HouseTemplate" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(943, 153)
+texture = ExtResource("5_bbd64")
 
-[editable path="Item"]
+[node name="HouseTemplate2" type="Sprite2D" parent="."]
+position = Vector2(1057, -371)
+texture = ExtResource("10_t5dv7")
+
+[node name="HouseTemplate3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1329, -775)
+texture = ExtResource("5_bbd64")
+
+[node name="HouseTemplate4" type="Sprite2D" parent="."]
+position = Vector2(894, -1586)
+texture = ExtResource("10_t5dv7")
+
+[node name="HouseTemplate5" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1152, -2675)
+texture = ExtResource("10_t5dv7")
+
+[node name="HouseTemplate6" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1509, -2567)
+texture = ExtResource("5_bbd64")
+
+[node name="Cat" parent="." instance=ExtResource("11_b7oja")]
+position = Vector2(1256, 88)
+idle_anim = "idle"
+
+[node name="Snake" parent="." instance=ExtResource("11_b7oja")]
+position = Vector2(1216, -744)
+texture = ExtResource("11_4x77o")
+idle_anim = "idle"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Snake/Area2D" index="0"]
+position = Vector2(-3.68408, -4.5155)
+
+[node name="Label" parent="Snake" index="2"]
+offset_top = -81.0
+offset_bottom = 0.0
+scale = Vector2(0.645, 0.645)
+text = "I have seen what you left behind up at the top. Recover the disc. I wanna hear the music you once played at bonfires"
+autowrap_mode = 2
+
+[node name="Label2" parent="Snake" index="3"]
+offset_left = -56.0
+offset_top = -53.0
+offset_right = 100.0
+offset_bottom = -24.0
+text = "I have news for you (E)"
+
+[node name="Tubie" parent="." instance=ExtResource("11_b7oja")]
+position = Vector2(1574.58, -2542.64)
+texture = ExtResource("13_o5e33")
+hframes = 5
+idle_anim = "veggie_idle"
+
+[node name="Label" parent="Tubie" index="2"]
+offset_left = -118.579
+offset_top = -81.3599
+offset_right = 266.421
+offset_bottom = -0.359863
+text = "I remember when you used to live here and play music for us. I hope you and your friend will play music once more for us all"
+autowrap_mode = 2
+
+[node name="Label2" parent="Tubie" index="3"]
+offset_left = -46.579
+offset_top = -49.3599
+offset_right = 109.421
+offset_bottom = -20.3599
+text = "I've missed you (E)"
+
+[node name="Friend" parent="." instance=ExtResource("11_b7oja")]
+position = Vector2(1201, 318)
+texture = ExtResource("13_awie7")
+flip_h = true
+idle_anim = "idle"
+
+[node name="CollisionShape2D" parent="Friend/Area2D" index="0"]
+visible = false
+
+[node name="Label" parent="Friend" index="2"]
+offset_left = -118.0
+offset_top = -72.0
+offset_right = 267.0
+offset_bottom = 9.0
+text = "You remember when we used to write songs here, I hid the cd we made at the top of the village? You should go check it out"
+autowrap_mode = 2
+
+[node name="Label2" parent="Friend" index="3"]
+offset_left = -52.0
+offset_top = -36.0
+offset_right = 130.0
+offset_bottom = -7.0
+text = "Long time no see... (E)"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_q3g5s")]
+position = Vector2(94, 469)
+metadata/_edit_group_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("15_s0kv2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+z_index = 15
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -11.5
+offset_right = 31.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.855, 2.855)
+pivot_offset = Vector2(31.685, 10.06)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "The End"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wsh1l")
+}
+
+[connection signal="body_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="end_game" from="CD" to="." method="_on_cd_end_game"]
+[connection signal="body_exited" from="CD/Sprite2D/Area2D" to="CD" method="_on_area_2d_body_exited"]
+[connection signal="play_cd" from="CharacterBody2D" to="CD" method="_on_character_body_2d_play_cd"]
+[connection signal="talk_to_npc" from="CharacterBody2D" to="Cat" method="_on_character_body_2d_talk_to_npc"]
+[connection signal="talk_to_npc" from="CharacterBody2D" to="Snake" method="_on_character_body_2d_talk_to_npc"]
+[connection signal="talk_to_npc" from="CharacterBody2D" to="Tubie" method="_on_character_body_2d_talk_to_npc"]
+[connection signal="talk_to_npc" from="CharacterBody2D" to="Friend" method="_on_character_body_2d_talk_to_npc"]
+[connection signal="finished" from="CharacterBody2D/AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+
+[editable path="CD"]
+[editable path="Snake"]
+[editable path="Tubie"]
+[editable path="Friend"]
+[editable path="CharacterBody2D"]

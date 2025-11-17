@@ -1,20 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5b0qpinvbirw"]
 
-[ext_resource type="Texture2D" uid="uid://dvskab1jtlx6h" path="res://PIXEL1992_65x_Houses&Backgorunds_ED2/House (52).png" id="1_akg4o"]
+[ext_resource type="Texture2D" uid="uid://bylgum1qpt3uv" path="res://assets/House Template.png" id="1_v5jss"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57dc5"]
-radius = 23.6567
+radius = 48.0476
 
 [node name="House" type="Sprite2D" groups=["House"]]
 z_index = -2
-scale = Vector2(2.36719, 2.36719)
-texture = ExtResource("1_akg4o")
+texture = ExtResource("1_v5jss")
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 0
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+visible = false
 position = Vector2(0, 10.1386)
 shape = SubResource("CircleShape2D_57dc5")
 

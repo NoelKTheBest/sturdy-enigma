@@ -379,6 +379,7 @@ _data = {
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 7
 script = ExtResource("1_yh4py")
+accel = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_s2pix")
@@ -395,13 +396,16 @@ libraries = {
 "": SubResource("AnimationLibrary_jsxvd")
 }
 
-[node name="ASearch" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_wloav")
-parameters/looping = true
+volume_db = -13.385
 
 [node name="DropthroughCancelTimer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 0.25
 one_shot = true
 
+[node name="JumpBufferTimer" type="Timer" parent="."]
+
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="timeout" from="DropthroughCancelTimer" to="." method="_on_dropthrough_cancel_timer_timeout"]
